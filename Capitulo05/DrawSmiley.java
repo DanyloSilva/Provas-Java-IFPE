@@ -1,0 +1,44 @@
+package Capitulo06;
+
+/*
+ * 20) A)Criado
+ * 
+ * B)testado
+ * 
+ * C) Desenhando um retangulo da cor Amarelo com metade da altura da boca. Apagando a metade superior
+ * e desenha um oval cobrindo levemente a parte superior da boca.
+ * Ambos com a mesma cor do fundo, para serem imperceptiveis.
+ * 
+ * 
+ * 
+ */
+
+
+import java.awt.Color;
+import java.awt.Graphics;
+import javax.swing.JPanel;
+
+public class DrawSmiley extends JPanel {
+
+	public void paintComponent(Graphics g) {
+		super.paintComponent(g);
+
+		// desenha o rosto
+		g.setColor(Color.YELLOW);
+		g.fillOval(10, 10, 200, 200);
+
+		// desenha os olhos
+		g.setColor(Color.BLACK);
+		g.fillOval(55, 65, 30, 30);
+		g.fillOval(135, 65, 30, 30);
+
+		// desenha a boca
+		g.fillOval(50, 110, 120, 60);
+
+		// "retoca" a boca para criar um sorriso
+		g.setColor(Color.YELLOW);
+		g.fillRect(50, 110, 120, 30);
+		g.fillOval(50, 120, 120, 40);
+	}
+
+}
